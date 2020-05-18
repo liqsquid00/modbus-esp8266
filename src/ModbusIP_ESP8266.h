@@ -36,7 +36,7 @@ typedef struct TTransaction {
 	bool operator ==(const TTransaction &obj) const {
 		    return transactionId == obj.transactionId;
 	}
-};
+} Transaction;
 
 class ModbusIP : public Modbus {
 	protected:
@@ -48,7 +48,7 @@ class ModbusIP : public Modbus {
 			uint8_t	 unitId;
 		};
 		uint8_t  raw[7];
-	};
+	} MBAP;
 	cbModbusConnect cbConnect = nullptr;
 	cbModbusConnect cbDisconnect = nullptr;
 	WiFiServer* server = nullptr;
